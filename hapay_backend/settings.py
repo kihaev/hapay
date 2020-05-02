@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'rest_framework',
+    'rest_framework_swagger',
+    'corsheaders',
+    'storages',
+    'django_extensions',
+
     'hapay_backend.apps.profiles',
     'hapay_backend.apps.files'
 ]
