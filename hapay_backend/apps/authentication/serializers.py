@@ -50,7 +50,6 @@ class LoginSerializer(serializers.Serializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    """Handles serialization and deserialization of User objects."""
 
     password = serializers.CharField(max_length=128, min_length=8, write_only=True)
 
