@@ -25,7 +25,7 @@ SECRET_KEY = "2ylbi&g10c@_z$8eze6k1(^^p!echa^z+)dvd$&3ervtapnzjk"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1", "hapay.com:8000", "hapay.com"]
 
 
 # Application definition
@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     "hapay_backend.apps.authentication",
     "hapay_backend.apps.core",
     "hapay_backend.apps.files",
+    "social_django",
 ]
+ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -60,6 +62,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "hapay_backend.urls"
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_URL_NAMESPACE='social'
+SOCIAL_AUTH_FACEBOOK_KEY = 190020622071472        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = "06a72667266407773043612c25f61751"  # App Secret
 
 TEMPLATES = [
     {
@@ -89,6 +100,11 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
 
 
 # Password validation

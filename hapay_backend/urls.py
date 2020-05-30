@@ -19,6 +19,8 @@ from django.conf.urls import url
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
+from hapay_backend.apps.authentication import views
+from django.contrib.auth import views as auth_views
 
 
 schema_view = get_schema_view(
@@ -29,6 +31,11 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
+    path("login/", views.login, name="login"),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path('social-auth/', include('social_django.urls', namespace="social")),
+    path("", views.home, name="home"),
     path("api/", include("hapay_backend.apps.files.urls", namespace="files")),
     path(
         "api/",
