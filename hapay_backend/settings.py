@@ -64,13 +64,17 @@ MIDDLEWARE = [
 ROOT_URLCONF = "hapay_backend.urls"
 
 AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 SOCIAL_AUTH_URL_NAMESPACE='social'
 SOCIAL_AUTH_FACEBOOK_KEY = 190020622071472        # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = "06a72667266407773043612c25f61751"  # App Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET='jJdOU6gROpkCMwvTg9gskUOx'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY='860432034944-95brvvlq3a4cposros9b08mg1rcffher.apps.googleusercontent.com'
 
 TEMPLATES = [
     {
