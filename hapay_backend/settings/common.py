@@ -64,6 +64,16 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get(
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get("SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get("SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'hapay-bucket'
+AWS_S3_REGION_NAME = 'eu-central-1'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY")
+#print(AWS_ACCESS_KEY_ID)
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_KEY")
+#print(AWS_SECRET_ACCESS_KEY)
+AWS_S3_ENDPOINT_URL = 'https://s3.amazonaws.com'
+
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
