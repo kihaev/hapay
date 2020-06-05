@@ -1,0 +1,113 @@
+@import "./src/scss/base/variables.scss";
+
+// start common styles
+.btn {
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: $base-radius;
+}
+
+.btn-warning {
+    background-color: rgba(255, 79, 7, 1);
+    border-color: rgba(255, 79, 7, 1);
+    color: #ffffff;
+    &:hover,
+    &:focus {
+        background-color: rgba(255, 79, 7, 0.8);
+        border-color: rgba(255, 79, 7, 0.8);
+        color: #ffffff;
+    }
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active {
+        background-color: rgba(255, 79, 7, 1);
+        border-color: rgba(255, 79, 7, 1);
+        color: #ffffff;
+    }
+}
+
+.btn-light {
+    background-color: #ffffff;
+    border-color: $border-color;
+    color: $primary-color;
+    &:hover,
+    &:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: $border-color;
+        color: $primary-color;
+    }
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active {
+        background-color: #ffffff;
+        border-color: $border-color;
+    }
+}
+
+.btn-lg {
+    font-size: 14px;
+    padding: 18px 20px;
+}
+
+.text-warning {
+    color: $secondary-color !important;
+}
+
+.form-control {
+    height: 39px;
+    padding: 8px 17px;
+    border-radius: $base-radius;
+    border-color: $border-color;
+    color: $primary-color;
+}
+
+.input-group-text {
+    background: none;
+    width: 60px;
+    justify-content: center;
+}
+
+.add-child.input-group-text {
+    border: dashed;
+    // border-color: #ced4da;
+    width: 60px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $primary-color;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: $primary-color;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: $primary-color;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: $primary-color;
+}
+
+.block-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    @media (max-width: 767.98px) {
+        font-size: 24px;
+    }
+}
+
+.carousel {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.grey-bg {
+    background: #F7F7F7;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(21, 24, 124, 0.8);
+    opacity: 0.8;
+}
+
+.blue-text-button .mat-button-wrapper {
+    color: #15187C;
+}
+// end common styles

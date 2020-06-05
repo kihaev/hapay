@@ -1,0 +1,179 @@
+@import "./src/scss/base/mixin.scss";
+@import "./src/scss/base/variables.scss";
+
+:host {
+    width: 100%;
+    height: 100%;
+}
+
+.faq-header {
+    padding: 30px 0;
+    .block-title {
+        font-size: 42px;
+    }
+    @media (max-width: 425px) {
+        padding: 59px 0;
+    }
+}
+
+.img-wrapper {
+    display: inline;
+    position: relative;
+    .play-button {
+        position: absolute;
+        cursor: pointer;
+        top: 50%;
+        left: 50%;
+        margin: -9px 0 0 -8px;
+    }
+}
+
+.play-button-container {
+    position: relative;
+    width: fit-content;
+    .play-circle {
+        width: 64px;
+        position: absolute;
+        border-radius: 50%;
+        margin: -32px 0 0 -32px;
+        left: 50%;
+        top: 50%;
+        height: 64px;
+        display: flex;
+        background-color: #FF4F07;
+        justify-content: center;
+        align-items: center;
+        transition: background-color .1s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background-color: #15187C;
+        }
+    }
+}
+
+.faq-content {
+    padding: 67px 0;
+    .question {
+        border-bottom: 1px solid #EEEEEE;
+        padding: 20px 0;
+        .question-header {
+            padding-right: 13px;
+            position: relative;
+            font-size: 24px;
+            font-weight: bold;
+            width: 100%;
+            &::before {
+                content: " ";
+                position: absolute;
+                background: #FF4F07;
+                right: 0;
+                top: 50%;
+                width: 13px;
+                height: 3px;
+            }
+            &::after {
+                transform: rotate(90deg);
+                transition: transform .2s ease-in-out;
+                content: " ";
+                position: absolute;
+                background: #FF4F07;
+                right: 0;
+                top: 50%;
+                width: 13px;
+                height: 3px;
+            }
+            &.expanded::after {
+                transform: rotate(0deg);
+            }
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
+        }
+        .question-answer {
+            font-size: 14px;
+            padding: 15px 0;
+        }
+    }
+}
+
+.digital-design {
+    padding: 113px 0 100px 0;
+    .block-title {
+        font-size: 42px;
+        margin-bottom: 10px;
+        @media (max-width: 767.98px) {
+            font-size: 24px;
+        }
+    }
+    .subtitle {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    .content {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    @media (max-width: 425px) {
+        padding: 0 0 60px 0;
+        
+    }
+    .btn-small {
+        margin-bottom: 15px;
+    }
+}
+
+.stats {
+    padding: 70px 0;
+    background: url("/assets/img/footer/footer-bg.jpg") no-repeat center;
+    background-size: cover;
+    color: #ffffff;
+
+    @media (max-width: 767.98px) {
+        padding: 60px 0;
+    }
+
+    .text {
+        opacity: 0.8;
+    }
+
+    .stat-item {
+        font-weight: 600;
+        text-align: left;
+
+        span {
+            display: block;
+            font-size: 36px;
+            font-weight: 700;
+            color: $secondary-color;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .btn-small {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        margin-bottom: 0;
+    }
+}
+
+// end Booking is the best travel service
+.mat-expansion-panel {
+    font: inherit;
+    box-shadow: none;
+    color: inherit;
+    .mat-expansion-panel-header {
+        padding: 0;
+        font-family: inherit;
+        .mat-expansion-panel-header-title {
+            color: inherit;
+            margin: 0;
+        }
+        &:hover {
+            background: none;
+        }
+    }
+}

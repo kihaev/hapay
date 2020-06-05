@@ -1,0 +1,35 @@
+:host {
+  height: 100%;
+  width: 100%;
+}
+.h-100vh{
+  height: 100vh;
+}
+.right-side {
+  height: 100%;
+
+  &.auth-bg {
+    background-image: url("src/assets/img/piramida.jpg");
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .right-side {
+    order: 1;
+    &.auth-bg {
+      background-position: center center;
+    }
+    height: 40vh;
+  }
+  .left-side{
+    order: 2;
+  }
+}

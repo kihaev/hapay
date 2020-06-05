@@ -1,0 +1,19 @@
+<button class="{{class}}"
+        (click)="onClickButton($event)"
+        [disabled]="disabled"
+        aria-label="button"
+        [type]="type"
+        loaderBtn>
+    <div class="astroNet-button-content">
+        <div *ngIf="imgUrl && (!disabled || disabled && !disabledImgUrl)">
+            <img [src]="imgUrl"
+                 [alt]="imgAlt">
+        </div>
+        <div *ngIf="disabledImgUrl && disabled">
+            <img [src]="disabledImgUrl"
+                 [alt]="imgAlt">
+        </div>
+        <span>{{text}}</span>
+    </div>
+    <ng-content></ng-content>
+</button>

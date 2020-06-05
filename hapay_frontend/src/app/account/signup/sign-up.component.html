@@ -1,0 +1,139 @@
+<div class="sign-in-container">
+  <mat-card>
+    <mat-card-title>Sign Up</mat-card-title>
+    <mat-card-content>
+      <!-- <div>Don't have account? please <a href="/account/signup"> Sign Up</a></div> -->
+      <div class="login-nav">
+        <a [routerLink]="['/account/signin']">Sign In</a>
+        <a [routerLink]="['/account/signup']"
+           class="active">Sign Up</a>
+      </div>
+      <form [formGroup]="registerForm"
+            (ngSubmit)="onSubmit()"
+            novalidate
+            autocomplete="off">
+        <div>
+          <mat-form-field class="full-width">
+            <mat-label>User Name *</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="firstName"
+                   [class.no-valid-input]="formControls['firstName'].errors && formControls['firstName'].touched" />
+          </mat-form-field>
+          <div *ngIf="formControls['firstName'].errors && formControls['firstName'].touched">
+            <div *ngIf="formControls['firstName'].errors.required && formControls['firstName'].touched">
+              First Name is required
+            </div>
+          </div>
+        </div>
+        <div>
+          <mat-form-field class="full-width">
+            <mat-label>Last Name *</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="lastName"
+                   [class.no-valid-input]="formControls['lastName'].errors && formControls['lastName'].touched" />
+          </mat-form-field>
+          <div *ngIf="formControls['lastName'].errors && formControls['lastName'].touched">
+            <div *ngIf="formControls['lastName'].errors.required && formControls['lastName'].touched">
+              Last Name is required
+            </div>
+          </div>
+        </div>
+        <div>
+          <mat-form-field class="full-width">
+            <mat-label>Email *</mat-label>
+            <input matInput
+                   type="text"
+                   formControlName="email"
+                   [class.no-valid-input]="formControls['email'].errors && formControls['email'].touched" />
+          </mat-form-field>
+          <div *ngIf="formControls['email'].errors && formControls['email'].touched">
+            <div *ngIf="formControls['email'].errors?.pattern && formControls['email'].touched">
+              The email format is incorrect.
+            </div>
+            <div *ngIf="formControls['email'].errors.required && formControls['email'].touched">Username is required
+            </div>
+          </div>
+        </div>
+        <div>
+          <mat-form-field class="full-width">
+            <mat-label>Password *</mat-label>
+            <input matInput
+                   type="password"
+                   formControlName="password"
+                   [class.no-valid-input]="formControls['password'].errors && formControls['password'].touched" />
+          </mat-form-field>
+          <div *ngIf="formControls['password'].errors && formControls['password'].touched">
+            <div *ngIf="formControls['password'].errors.required">Password is required</div>
+            <div *ngIf="formControls['password'].errors && !formControls['password'].errors?.hasUpper">
+              One uppercase character
+            </div>
+            <div *ngIf="formControls['password'].errors && !formControls['password'].errors?.hasSymbol">
+              One special character
+            </div>
+            <div *ngIf="formControls['password'].errors && !formControls['password'].errors?.hasNumber">
+              One number
+            </div>
+            <div *ngIf="formControls['password'].errors && !formControls['password'].errors?.hasLength">
+              8 characters minimum
+            </div>
+          </div>
+        </div>
+        <div>
+          <mat-form-field class="full-width">
+            <mat-label>Confirm password</mat-label>
+            <input matInput
+                   #refPassInput
+                   validate-onchange
+                   type="password"
+                   formControlName="confirmPassword"
+                   placeholder="Confirm password"
+                   [class.no-valid-input]="formControls['confirmPassword'].errors && formControls['confirmPassword'].touched" />
+          </mat-form-field>
+          <div *ngIf="formControls['confirmPassword'].errors && formControls['confirmPassword'].touched">
+            <div
+                 *ngIf="formControls['confirmPassword'].errors && formControls['confirmPassword'].errors?.matchPassword">
+              Password and confirm password not equals
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <a mat-raised-button [routerLink]="['/account/signin']" class="btn btn-link">Cancel</a> -->
+        </div>
+
+        <mat-card-actions>
+          <astronet-button text="Sign Up"
+                           type='submit'
+                           [disabled]="requesting"
+                           class="large full-width big-red-button w-100">
+          </astronet-button>
+          <div class="line-or">Or</div>
+          <div class="social-buttons">
+            <button mat-button
+                    type="button"
+                    class="facebook-btn"
+                    (click)="signInWithFB()">
+              <img src="assets/img/auth/fb.svg"
+                   alt="facebook">
+              <span>
+                Login with Facebook
+              </span>
+            </button>
+            <button mat-button
+                    type="button"
+                    class="google-btn"
+                    (click)="signInWithGoogle()">
+              <img src="assets/img/auth/google.svg"
+                   alt="google">
+              <span>
+                Login with Google
+              </span>
+            </button>
+          </div>
+        </mat-card-actions>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</div>

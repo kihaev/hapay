@@ -1,0 +1,52 @@
+@import "./src/scss/base/variables.scss";
+
+.account-verification {
+  padding: 24px 32px;
+  background-color: $feedback-light-agua;
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  margin: 40px 0 32px;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 32px 1fr;
+    margin: 0;
+  }
+}
+
+.verification-status-img {
+  img {
+    display: block;
+  }
+}
+.verification-subtitle {
+  color: $gray-90;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.btn-verification {
+  @media screen and (max-width: 768px) {
+    grid-column: 1 / span 2;
+  }
+}
+
+.success {
+  background-color: $feedback-light-green;
+}
+
+.warning {
+  background-color: $feedback-light-yellow;
+}
+
+.error {
+  background-color: $feedback-light-red;
+}
+
+.info {
+  background-color: $feedback-light-agua;
+}
+
+.mobile-toaster{
+  background-color: #111111;
+}

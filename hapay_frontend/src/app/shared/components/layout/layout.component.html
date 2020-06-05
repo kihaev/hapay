@@ -1,0 +1,36 @@
+<mat-sidenav-container class="container-fluid p-0 h-100"
+                       [hasBackdrop]="true">
+    <!--Mobile Bar-->
+    <mat-sidenav #drawer
+                 class="sidenav"
+                 fixedInViewport
+                 [autoFocus]="false"
+                 [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'"
+                 [mode]="'over'"
+                 [opened]="drawer.opened && (isHandset | async) === false">
+        <app-not-logged-in-sidenav-menu *ngIf="!isLoggedIn"
+                                        (onClose)="drawer.close()"></app-not-logged-in-sidenav-menu>
+        <app-logged-in-sidenav-menu *ngIf="isLoggedIn"
+                                    (onClose)="drawer.close()"></app-logged-in-sidenav-menu>
+    </mat-sidenav>
+
+    <!--Desktop Bar-->
+    <mat-sidenav-content>
+        
+        <app-not-logged-in-header *ngIf="!isLoggedIn"
+                                  [drawer]="drawer"
+                                  [isHandset]="isHandset">
+        </app-not-logged-in-header>
+
+        <app-logged-in-header *ngIf="isLoggedIn"
+                              [drawer]="drawer"
+                              [isHandset]="isHandset">
+        </app-logged-in-header>
+        <div class="position-relative">
+            <ng-content></ng-content>
+            <ngx-spinner type="ball-spin-clockwise-fade-rotating"
+                         [fullScreen]="false"></ngx-spinner>
+        </div>
+        <app-main-footer *ngIf="!isHideFooter"></app-main-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>

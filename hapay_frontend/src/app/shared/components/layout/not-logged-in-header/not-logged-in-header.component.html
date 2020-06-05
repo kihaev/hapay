@@ -1,0 +1,53 @@
+<header>
+  <mat-toolbar>
+    <div class="d-flex align-items-center justify-content-between w-100 container">
+      <a [routerLink]="['/']"
+         class="logo">
+         <img src="/assets/img/files.png"
+            style="margin-left: 50px;"
+            width="100px"
+            alt="">
+             <!-- HAPAY -->
+      </a>
+      <div>
+        <ul class="list-group list-group-horizontal-md d-none d-lg-block">
+          <!-- <li class="excursions list-group-item border-0">
+            <a href="#">Excursions</a>
+          </li>
+          <li class="transfers list-group-item border-0">
+            <a routerLink="/search-transfers">Transfers</a>
+          </li> -->
+          <!-- <li class="hotels list-group-item border-0">
+            <a href="#">Hotels</a>
+          </li> -->
+        </ul>
+      </div>
+      <button type="button"
+              Class="d-block d-lg-none"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+
+      <div class="buttons-container d-none d-lg-flex">
+        <button class="btn btn-warning contact-us"
+                [routerLink]="['contact-us']">
+          Contact us
+        </button>
+        <button class="btn btn-light"
+                [routerLink]="['/account/signin']">
+          Sign In
+        </button>
+        <!-- <button mat-stroked-button
+                [routerLink]="['basket']">
+          <mat-icon>shopping_cart</mat-icon>
+          Basket
+          <span class="message-counter"
+                *ngIf="inBasketCount">{{inBasketCount}}</span>
+        </button> -->
+      </div>
+    </div>
+  </mat-toolbar>
+</header>

@@ -1,0 +1,205 @@
+@import "./src/scss/base/variables.scss";
+@import "./src/scss/base/mixin.scss";
+
+.account-wrapper {
+  padding: 32px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 24px 24px;
+  }
+}
+
+.title {
+  @include flex-between();
+  margin-bottom: 24px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+    color: $gray-90;
+  }
+
+  .title-container-btn {
+    display: flex;
+
+    .save-btn {
+      margin-right: 8px;
+    }
+  }
+}
+
+.verification-stasus-img {
+  img {
+    display: block;
+  }
+}
+
+.verification-subtitle {
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.your-photo-wrapper {
+  margin-bottom: 24px;
+}
+
+.photo-subtitle {
+  margin-bottom: 16px;
+}
+
+.your-photo {
+  display: flex;
+  align-items: center;
+}
+
+.account-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16px;
+
+  img {
+    @include stretch-cover;
+  }
+}
+
+.remove-account-photo {
+  margin-top: 8px;
+  line-height: 1.5;
+  color: $accent-blue;
+  cursor: pointer;
+}
+
+.line-separator {
+  height: 1px;
+  width: 100%;
+  background-color: $gray-20;
+  margin: 32px 0;
+}
+
+.zipcode-input {
+  max-width: 170px;
+}
+
+.add-address-account {
+  .tenant-step-title {
+    margin-bottom: 24px;
+  }
+}
+
+.btn-add-adress {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 16px;
+  line-height: 1.5;
+  color: $accent-blue;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-save {
+  border-top: 1px solid $gray-20;
+  padding: 16px 32px;
+  text-align: right;
+
+  @media screen and (max-width: 768px) {
+    padding: 16px 24px;
+  }
+
+  >div {
+    display: inline-block;
+  }
+}
+
+.info-account {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 24px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 32px;
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: auto;
+    row-gap: 16px;
+    margin-top: 24px;
+  }
+}
+
+.info-subtitle {
+  font-size: 14px;
+  line-height: 1.71;
+  color: $gray-70;
+}
+
+.tenant-input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+
+  @media screen and (max-width: 768px) {
+    gap: 24px;
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: auto;
+  }
+
+  input {
+    outline: none;
+    width: 100%;
+    height: 40px;
+    //border: solid 1px $gray-30;
+    background-color: $white;
+    //padding: 11px 0px;
+    border-radius: 0;
+    box-shadow: none;
+
+    &:focus {
+      border: 1px solid $aqua;
+    }
+  }
+
+  mat-form-field {
+    width: 100%;
+
+    .mat-select {
+      border: 1px solid $gray-25;
+    }
+
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    // .mat-form-field-label {
+    //   top: 29px;
+    //   left: 39px;
+    // }
+
+    .mat-icon-button {
+      position: absolute;
+      left: -2rem;
+      top: -2rem;
+    }
+
+    .mat-form-field-infix {
+      border-top: none;
+
+      @media screen and (max-width: 575px) {
+        width: 133px;
+      }
+    }
+  }
+}

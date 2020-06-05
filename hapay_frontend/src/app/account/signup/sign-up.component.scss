@@ -1,0 +1,170 @@
+:host {
+  justify-content: center;
+  margin: 20px 0px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-card {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.login-nav {
+  padding-bottom: 12px;
+  border-bottom: 2px solid #70707016;
+  margin-bottom: 30px;
+  a {
+      color: rgb(63, 158, 44);
+      font-size: 18px;
+      padding-bottom: 15px;
+      margin-right: 40px;
+      font-weight: bold;
+      &.active {
+          border-bottom: 2px solid  rgb(63, 158, 44);
+      }
+  }
+}
+
+.mat-form-field-flex {
+  border: 2px solid #D6D8DC;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+mat-card-title {
+  display: block;
+  font-size: 42px;
+  font-weight: 700;
+  color: rgb(63, 158, 44);
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 30px;
+
+  mat-card-content {
+      display: flex;
+      justify-content: center;
+
+      form {
+          width: 100%;
+      }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sign-in-container {
+  background: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: calc(100% - 100px);
+  min-height: 470px;
+  mat-card {
+      box-shadow: none;
+  }
+}
+
+mat-card {
+  // max-width: 480px;
+  // margin-left: calc(5vh + 5%);
+  // margin-right: 5vh;
+  width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // padding: 245px 100px;
+
+  @media screen and (max-width: 700px) {
+      width: 100%;
+  }
+}
+
+.img-bar {
+  background-image: url(https://www.etoncollege.ca/wp-content/uploads/You-can-work-for-a-variety-of-businesses-after-completing-your-tourism-business-administration-training.jpg);
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  min-height: 450px;
+  @media screen and (max-width: 700px) {
+      display: none;
+  }
+}
+
+.password-block {
+  display: flex;
+}
+
+.eye-block {
+  display: flex;
+  align-items: center;
+}
+
+.line-or {
+  margin: 30px 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33;
+  color: lightgray;
+  position: relative;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media screen and (max-width: 576px) {
+      margin: 32px 0;
+  }
+
+  &:before,
+  &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 46%;
+      background-color: lightgray;
+      top: 50%;
+      margin-top: -.5px;
+  }
+
+  &:before {
+      left: 0;
+  }
+
+  &:after {
+      right: 0;
+  }
+}
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facebook-btn {
+  background: #4267B2;
+
+  img {
+      margin-right: 8px;
+  }
+
+  span {
+      color: white
+  }
+}
+
+.google-btn {
+  background: #DB4437;
+
+  img {
+      margin-right: 8px;
+  }
+
+  span {
+      color: white
+  }
+}

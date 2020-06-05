@@ -1,0 +1,14 @@
+<div class="account-verification {{notificationSeverityEnum[model.severity]?.toLowerCase()}}"
+     *ngIf="model?.description">
+  <div class="verification-status-img"><img [src]="iconString"
+         alt="Verification status"></div>
+  <div>
+    <div class="verification-subtitle"
+         *ngIf="model.title">{{model.title}}</div>
+    <div class="verification-desc"
+         [innerHTML]="model.description"></div>
+  </div>
+  <div class="btn-verification">
+    <ng-content></ng-content>
+  </div>
+</div>

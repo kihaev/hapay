@@ -1,0 +1,79 @@
+<header>
+        <mat-toolbar>
+                <div class="d-flex align-items-center justify-content-between w-100">
+                        <a [routerLink]="['/']"
+                           class="d-flex align-items-center logo">
+                                <img src="/assets/img/files.png"
+                                        style="margin-left: 50px;"
+                                        width="100px"
+                                        alt="">
+                                     <!-- HAPAY -->
+                        </a>
+                        <div>
+                                <ul class="list-group list-group-horizontal-md d-none d-lg-block">
+                                        <!-- <li class="excursions list-group-item border-0">
+                                                <a href="#">Excursions</a>
+                                        </li>
+                                        <li class="transfers list-group-item border-0">
+                                                <a [routerLink]="['/', 1]">Transfers</a>
+                                        </li> -->
+                                        <!-- <li class="hotels list-group-item border-0">
+                                                <a href="#">Hotels</a>
+                                        </li> -->
+                                </ul>
+                        </div>
+                        <button type="button"
+                                Class="d-block d-lg-none"
+                                aria-label="Toggle sidenav"
+                                mat-icon-button
+                                (click)="drawer.toggle()">
+                                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                        </button>
+
+
+                        <div class="buttons-container d-none d-lg-flex">
+                                <button class="btn contact-us"
+                                        mat-raised-button
+                                        color="accent"
+                                        [routerLink]="['upload-file']">
+                                        Upload file
+                                </button>
+                                <button class="btn contact-us"
+                                        mat-raised-button
+                                        color="accent"
+                                        [routerLink]="['show-my-files']">
+                                        Show my files
+                                </button>
+
+                                <div class="avatar d-flex align-items-center"
+                                     [hidden]="isHandset | async">
+                                        <div mat-button
+                                                style="margin-right: 50px;"
+                                             [matMenuTriggerFor]="beforeMenu"
+                                             class="d-flex align-items-center">
+                                                <div class="avatar-empty rounded-circle"
+                                                     *ngIf="!avatarUrl">{{ notExistAvatar }}</div>
+                                                <div class="avatar-img rounded-circle"
+                                                     *ngIf="avatarUrl">
+                                                        <img [lazyLoad]="avatarUrl"
+                                                             alt="user" />
+                                                </div>
+                                                <span class="user-name">{{authService.user?.user?.username}}</span>
+                                        </div>
+
+                                        <mat-menu #beforeMenu="matMenu"
+                                                  xPosition="before"
+                                                  class="custom-mat-menu">
+                                                <!-- <button mat-menu-item
+                                                        (click)="navigate('my-info')"
+                                                        aria-label="My account">My Account</button> -->
+                                                <!-- <div class="divide-line"></div> -->
+                                                <button mat-menu-item
+                                                        (click)="signOut()"
+                                                        aria-label="Sign out">Sign Out</button>
+                                        </mat-menu>
+                                </div>
+                        </div>
+                </div>
+        </mat-toolbar>
+</header>

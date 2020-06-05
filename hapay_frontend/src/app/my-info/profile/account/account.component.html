@@ -1,0 +1,175 @@
+<div class="account-wrapper">
+  <div class="title">
+    <h3>Account</h3>
+    <div class="title-container-btn">
+      <div class="save-btn">
+        <astronet-button *ngIf="isEditing"
+                         text="Save"
+                         (onClick)="updateAccountInfo()"
+                         class="default middle primary-action relative-loader">
+        </astronet-button>
+      </div>
+      <div>
+        <astronet-button *ngIf="!isEditing"
+                         text="Edit"
+                         (onClick)="editAccount($event)"
+                         class="default middle">
+        </astronet-button>
+      </div>
+      <div>
+        <astronet-button *ngIf="isEditing"
+                         text="Cancel"
+                         (onClick)="editCancel($event)"
+                         class="default middle">
+        </astronet-button>
+      </div>
+    </div>
+  </div>
+  <app-notification [placeId]="notificationComponentIdEnum.PhoneNumberNotConfirmed">
+    <div class="notification-content">
+      <astronet-button id={{notificationComponentIdEnum.PhoneNumberNotConfirmed}}
+                       text="Verify pnone number"
+                       (onClick)="verifyPhone()"
+                       class="default middle">
+      </astronet-button>
+    </div>
+  </app-notification>
+  <div class="info-account-edit"
+       *ngIf="isEditing">
+    <form [formGroup]="accountForm">
+      <div class="your-photo-wrapper">
+        <div class="photo-subtitle">Your photo</div>
+        <div class="your-photo">
+          <div class="account-image">
+            <img src="assets/img/my-info/default-avatar.png"
+                 alt="avatar"
+                 *ngIf="!profileInfoModel.profilePhoto">
+            <img [src]="profileInfoModel.profilePhoto"
+                 alt="profile-photo"
+                 *ngIf="profileInfoModel.profilePhoto">
+          </div>
+          <div>
+            <div class="upload-account-photo">
+              <astronet-button *ngIf="isEditing"
+                               text="Upload photo"
+                               (onClick)="inputAvatar.click()"
+                               class="default middle">
+              </astronet-button>
+              <input type="file"
+                     #inputAvatar
+                     aria-label="Upload photo"
+                     hidden
+                     id="upload-account-photo"
+                     (change)="changeProfileAvatar($event)">
+            </div>
+            <div *ngIf="profileInfoModel.profilePhoto"
+                 (click)="deleteProfileImage()"
+                 class="remove-account-photo">Remove photo</div>
+          </div>
+        </div>
+      </div>
+      <div class="tenant-input-container">
+        <div>
+          <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput
+                   formControlName="firstName"
+                   type="text"
+                   placeholder="First Name" />
+          </mat-form-field>
+          <div class="input-msg-error"
+               *ngIf="accountForm.controls['firstName'].dirty && accountForm.controls['firstName'].errors">
+            First Name field is invalid
+          </div>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput
+                   formControlName="lastName"
+                   type="text"
+                   placeholder="Last Name" />
+          </mat-form-field>
+          <div class="input-msg-error"
+               *ngIf="accountForm.controls['lastName'].dirty && accountForm.controls['lastName'].errors">
+            Last Name field is invalid
+          </div>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label>Email address</mat-label>
+            <input matInput
+                   formControlName="email"
+                   type="text"
+                   placeholder="Email Address" />
+          </mat-form-field>
+          <div class="input-msg-error"
+               *ngIf="accountForm.controls['email'].dirty && accountForm.controls['email'].errors">
+            Email field is invalid
+          </div>
+        </div>
+
+        <div>
+          <mat-form-field [floatLabel]="'always'">
+            <mat-label>Phone number</mat-label>
+
+            <input type="text"
+                   matInput
+                   TelInput
+                   (telInputValidStatus)="isNumberValid = $event"
+                   formControlName="phoneNumber" />
+          </mat-form-field>
+          <div class="input-msg-error"
+               *ngIf="accountForm.controls['phoneNumber'].dirty && !isNumberValid">
+            Phone field is invalid
+          </div>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <mat-label>Birthday</mat-label>
+            <input id="birtday"
+                   (click)="datePicker.open()"
+                   matInput
+                   [max]="maxDate"
+                   [matDatepicker]="datePicker"
+                   type="text"
+                   readonly
+                   matInput
+                   placeholder="Choose date"
+                   formControlName="birthday">
+            <mat-datepicker-toggle matSuffix
+                                   [for]="datePicker"></mat-datepicker-toggle>
+            <mat-datepicker #datePicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="info-account"
+       *ngIf="profileInfoModel && !isEditing">
+    <div>
+      <div class="info-subtitle">First name</div>
+      <div class="info-title">{{profileInfoModel?.firstName}}</div>
+    </div>
+    <div>
+      <div class="info-subtitle">Last name</div>
+      <div class="info-title">{{profileInfoModel?.lastName}}</div>
+    </div>
+    <div>
+      <div class="info-subtitle">Email address</div>
+      <div class="info-title">{{profileInfoModel?.email}}</div>
+    </div>
+    <div>
+      <div class="info-subtitle">Phone number</div>
+      <div class="info-title">{{profileInfoModel?.phoneNumber}}</div>
+    </div>
+    <div>
+      <div class="info-subtitle">Birthday</div>
+      <div class="info-title">{{profileInfoModel?.birthday | date: "longDate" }}</div>
+    </div>
+  </div>
+</div>
