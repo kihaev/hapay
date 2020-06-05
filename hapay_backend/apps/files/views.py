@@ -31,7 +31,8 @@ class FileViewSet(viewsets.ModelViewSet):
     def create(self, request):
         serializer_context = {"owner": request.user.profile, "request": request}
         serializer_data = request.data.get("file", {})
-
+        print(request.data)
+        print(request.file)
         serializer = self.serializer_class(
             data=serializer_data, context=serializer_context
         )
