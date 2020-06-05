@@ -16,7 +16,7 @@ pyjwt = "*"
 boto3 = "*"
 social-auth-app-django = "*"
 python-dotenv = "*"
-psycorg2 = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
