@@ -1,0 +1,123 @@
+<div class="profile-wrapper">
+  <ul [class.profile-tab-mobile-active]="isMobileTabActive"
+      class="tab-container"
+      *ngIf="!isSmallTabletResolution"
+      style="list-style-type: none">
+    <li (click)="showComponent(1)"
+        [class.active-tab]="step === 1"
+        [class.active-mobile-tab]="step === 1"
+        [class.mobile-tab]="!isMobileTabActive">
+      <svg>
+        <use xlink:href="assets/img/my-info/account-profile.svg#person"></use>
+      </svg>
+      <span>Account</span>
+    </li>
+    <li (click)="showComponent(2)"
+        [class.active-tab]="step === 2"
+        [class.active-mobile-tab]="step === 2"
+        [class.mobile-tab]="!isMobileTabActive">
+      <svg>
+        <use xlink:href="assets/img/my-info/account-profile.svg#lock"></use>
+      </svg>
+      <span>Password</span>
+    </li>
+    <li (click)="showComponent(3)"
+        [class.active-tab]="step === 3"
+        [class.active-mobile-tab]="step === 3"
+        [class.mobile-tab]="!isMobileTabActive">
+      <svg>
+        <use xlink:href="assets/img/my-info/account-profile.svg#credit-card"></use>
+      </svg>
+      <span>Billing details</span>
+    </li>
+    <li class="profile-tab-logout"
+        (click)="logOut()"
+        [class.mobile-tab]="!isMobileTabActive">
+      <span>Log Out</span>
+    </li>
+  </ul>
+  <div class="profile-loadable-wrapper">
+    <div class="profile-desktop"
+         *ngIf="!isSmallTabletResolution">
+      <app-account *ngIf="step === 1"
+                   [profileInfoModel]="profileInfoModel"></app-account>
+      <app-password *ngIf="step === 2"></app-password>
+      <app-billing-info *ngIf="step === 3"></app-billing-info>
+    </div>
+
+    <div *ngIf="isSmallTabletResolution"
+         class="profile-mobile">
+      <mat-accordion class="custom-profile-accordion">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header [expandedHeight]="'76px'"
+                                      [collapsedHeight]="'76px'"
+                                      (click)="openAccount()">
+            <mat-panel-title>
+              <i>Account</i>
+              <div class="container-btn">
+                <div class="save-btn">
+                  <astronet-button *ngIf="isAccountOpened && isEditing == isAccountEditMode"
+                                   text="Save"
+                                   (onClick)="updateAccountInfo()"
+                                   class="default middle primary-action relative-loader">
+                  </astronet-button>
+                </div>
+                <div>
+                  <astronet-button *ngIf="isAccountOpened && isEditing != isAccountEditMode"
+                                   text="Edit"
+                                   (onClick)="editAccount($event)"
+                                   class="default middle">
+                  </astronet-button>
+                </div>
+                <div>
+                  <astronet-button *ngIf="isAccountOpened && isEditing == isAccountEditMode"
+                                   text="Cancel"
+                                   class="default middle">
+                  </astronet-button>
+                </div>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-account [isAccountEditing]="isEditing"
+                       [profileInfoModel]="profileInfoModel"></app-account>
+          <!-- <app-account [profileInfoModel]="profileInfoModel"
+                             [isOpened]="isOpened"
+                             [isAccountEditing]="isEditing"
+                             (updateUserInfo)="onUpdateUser($event)"
+                             [onSaved]="saveEmitted">
+                </app-account> -->
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header [expandedHeight]="'76px'"
+                                      [collapsedHeight]="'76px'"
+                                      (click)="openPassword()">
+            <mat-panel-title>
+              <i>Password</i>
+              <div>
+                <astronet-button *ngIf="isPasswordOpened && isEditing != isPasswordEditMode"
+                                 text="Edit"
+                                 (onClick)="editPassword($event)"
+                                 class="default middle">
+                </astronet-button>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-password [isPasswordEditing]="isEditing"></app-password>
+        </mat-expansion-panel>
+        
+        <mat-expansion-panel>
+          <mat-expansion-panel-header [expandedHeight]="'76px'"
+                                      [collapsedHeight]="'76px'"
+                                      (click)="openBilling()">
+            <mat-panel-title>
+              <i>Billing</i>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-billing-info></app-billing-info>
+          <!-- <app-billing-info [allBillingModel]="allBillingModel"
+                                  (updateBillingInfo)="updateBillingInfo($event)"></app-billing-info> -->
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

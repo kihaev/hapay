@@ -1,0 +1,99 @@
+@import "./src/scss/base/variables.scss";
+.footer {
+    background: $primary-color;
+    color: #9393C2;
+
+    .row:first-child {
+        padding-top: 40px;
+        padding-bottom: 20px;
+
+        @media (max-width: 991.98px) {
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .title {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    ul.menu {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+
+            a {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    ul.contacts {
+        margin: 0;
+        padding: 10px 0;
+
+        li {
+            position: relative;
+            list-style: none;
+            color: #ffffff;
+            margin-bottom: 10px;
+            padding-left: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                content: '';
+            }
+
+            &.location:before {
+                background: url("/assets/img/footer/location.svg") no-repeat;
+                width: 16px;
+                height: 20px;
+            }
+
+            &.phone:before {
+                background: url("/assets/img/footer/phone.svg") no-repeat;
+                width: 20px;
+                height: 20px;
+            }
+
+            &.time:before {
+                background: url("/assets/img/footer/time.svg") no-repeat;
+                width: 20px;
+                height: 20px;
+            }
+
+            &.email:before {
+                top: 2px;
+                background: url("/assets/img/footer/email.svg") no-repeat;
+                width: 20px;
+                height: 16px;
+            }
+
+            a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+        }
+    }
+
+    hr {
+        background: #243089;
+    }
+}

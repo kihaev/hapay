@@ -1,0 +1,31 @@
+FROM node:10 as buildContainer
+WORKDIR /app
+COPY ./package.json ./package-lock.json /app/
+
+WORKDIR /app
+COPY . /app
+
+RUN npm install && npm run build:ssr:production
+RUN npm run reinstall
+
+FROM node:10
+WORKDIR /app
+# Copy dependency definitions
+COPY --from=buildContainer /app/package.json /app
+COPY --from=buildContainer /app/package-lock.json /app
+
+# fix bug at the ubuntu
+RUN true
+# Get all the code needed to run the app
+COPY --from=buildContainer /app/dist /app/dist
+COPY --from=buildContainer /app/dist/server /app/dist/server
+
+# fix bug at the ubuntu
+RUN true
+COPY --from=buildContainer /app/node_modules /app/node_modules
+COPY --from=buildContainer /app/dist/browser /app/dist/browser
+# Expose the port the app runs in
+EXPOSE 4441
+
+# Serve the app
+CMD ["npm", "run", "server"]

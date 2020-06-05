@@ -1,0 +1,94 @@
+<div class="sign-in-container">
+  <mat-card style="box-shadow: 0 0 3px #ccc;">
+    <mat-card-title>Sign In</mat-card-title>
+    <mat-card-content>
+      <!-- <div>Don't have account? please <a href="/account/signup"> Sign Up</a></div> -->
+      <div class="login-nav">
+        <a [routerLink]="['/account/signin']"
+           class="active">Sign In</a>
+        <a [routerLink]="['/account/signup']">Sign Up</a>
+      </div>
+      <form [formGroup]="loginForm"
+            novalidate
+            autocomplete="off">
+        <div>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput
+                   validate-onchange
+                   formControlName="email"
+                   type="text"
+                   placeholder="Email"
+                   [(ngModel)]="email"
+                   [class.no-valid-input]="loginForm.controls['email'].errors && loginForm.controls['email'].touched"/>
+          </mat-form-field>
+          <div class="input-msgs-error"
+               *ngIf="loginForm.controls['email'].errors && loginForm.controls['email'].touched">
+            <span *ngIf="loginForm.controls['email'].errors?.required">
+              Email is required.
+            </span>
+            <span *ngIf="loginForm.controls['email'].errors?.pattern">
+              The email format is incorrect.
+            </span>
+          </div>
+        </div>
+
+        <div class="password-block">
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput
+                   #refPassInput
+                   validate-onchange
+                   formControlName="password"
+                   type="password"
+                   placeholder="Password"
+                   [ngClass]="{'no-valid-input': loginForm.controls['password'].errors && loginForm.controls['password'].touched}"
+                   [(ngModel)]="password" />
+            <div class="input-msg-error"
+                 *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched">
+              Password is required
+            </div>
+          </mat-form-field>
+          <!-- <div class="eye-block"
+                         (click)="showPassword(refPassInput)">
+                        <div [class.show-password]="isPasswordShowed">
+                            <img src="assets/img/auth/eye.svg"
+                                 alt="eye">
+                        </div>
+                        <span *ngIf="!isPasswordShowed">Show</span>
+                        <span *ngIf="isPasswordShowed">Hide</span>
+                    </div> -->
+        </div>
+        <!-- <div>Forgot password? You can <a href="/account/forgot-password">reset password</a></div> -->
+      </form>
+      <mat-card-actions>
+        <astronet-button text="Sign in"
+                         (onClick)="login()"
+                         class="large full-width big-red-button"
+                         [disabled]="false">
+        </astronet-button>
+        <div class="line-or">Or</div>
+        <div class="social-buttons">
+          <button mat-button
+                  class="facebook-btn"
+                  (click)="signInWithFB()">
+            <img src="assets/img/auth/fb.svg"
+                 alt="facebook">
+            <span>
+              Login with Facebook
+            </span>
+          </button>
+          <button mat-button
+                  class="google-btn"
+                  (click)="signInWithGoogle()">
+            <img src="assets/img/auth/google.svg"
+                 alt="google">
+            <span>
+              Login with Google
+            </span>
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>

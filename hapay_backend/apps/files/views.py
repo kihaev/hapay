@@ -13,12 +13,7 @@ from .renderers import FileJSONRenderer
 from .serializers import FileSerializer
 
 
-class FileViewSet(
-    mixins.CreateModelMixin,
-    mixins.ListModelMixin,
-    mixins.RetrieveModelMixin,
-    viewsets.GenericViewSet,
-):
+class FileViewSet(viewsets.ModelViewSet):
     queryset = File.objects.select_related("owner", "owner__user")
     permission_classes = (IsAuthenticatedOrReadOnly,)
     renderer_classes = (FileJSONRenderer,)
@@ -36,7 +31,8 @@ class FileViewSet(
     def create(self, request):
         serializer_context = {"owner": request.user.profile, "request": request}
         serializer_data = request.data.get("file", {})
-
+        print(request.data)
+        print(request.file)
         serializer = self.serializer_class(
             data=serializer_data, context=serializer_context
         )

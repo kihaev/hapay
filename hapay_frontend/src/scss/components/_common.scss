@@ -1,0 +1,213 @@
+.iti--allow-dropdown {
+    width: 100%;
+}
+
+.intl-tel-input {
+    width: 100%;
+    display: flex;
+
+    .flag-container {
+        position: static;
+        height: 48px;
+
+        &:hover,
+        &:focus {
+            outline: 0;
+        }
+
+        .selected-flag {
+
+            &:hover,
+            &:focus {
+                outline: 0;
+            }
+        }
+
+        .country-list {
+            white-space: normal;
+            width: 100%;
+        }
+    }
+
+    input {
+        position: absolute !important;
+        padding-right: 0 !important;
+        width: 100%;
+    }
+}
+
+.mat-drawer-container {
+    background: #ffffff;
+    color: #15187C;
+}
+
+.mat-menu-content {
+    button {
+        position: relative;
+        padding-left: 40px;
+        outline: none;
+
+        &:before {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            content: '';
+        }
+    }
+
+    .excursions:before {
+        background: url("/assets/img/header/excursions.svg") no-repeat;
+        background-size: 20px 14px;
+        width: 20px;
+        height: 14px;
+        margin-top: -7px;
+    }
+
+    .transfers:before {
+        background: url("/assets/img/header/transfers.svg") no-repeat;
+        background-size: 16px 20px;
+        width: 16px;
+        height: 20px;
+        margin-top: -10px;
+    }
+
+    .hotels:before {
+        background: url("/assets/img/header/hotels.svg") no-repeat;
+        background-size: 20px 16px;
+        width: 20px;
+        height: 16px;
+        margin-top: -8px;
+    }
+}
+
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-case:before {
+    content: "\e900";
+    color: #ff4f07;
+}
+
+.icon-cash:before {
+    content: "\e901";
+    color: #ff4f07;
+}
+
+.icon-city:before {
+    content: "\e902";
+    color: #ff4f07;
+}
+
+.icon-dolly-fish:before {
+    content: "\e903";
+    color: #ff4f07;
+}
+
+.icon-empty-star:before {
+    content: "\e904";
+    color: #ff4f07;
+}
+
+.icon-fins:before {
+    content: "\e905";
+    color: #ff4f07;
+}
+
+.icon-full-star:before {
+    content: "\e906";
+    color: #ff4f07;
+}
+
+.icon-golf:before {
+    content: "\e907";
+    color: #ff4f07;
+}
+
+.icon-headphone:before {
+    content: "\e908";
+    color: #ff4f07;
+}
+
+.icon-heart:before {
+    content: "\e909";
+    color: #ff4f07;
+}
+
+.icon-helicopter:before {
+    content: "\e90a";
+    color: #ff4f07;
+}
+
+.icon-hiking:before {
+    content: "\e90b";
+    color: #ff4f07;
+}
+
+.icon-island:before {
+    content: "\e90c";
+    color: #ff4f07;
+}
+
+.icon-note:before {
+    content: "\e90d";
+    color: #ff4f07;
+}
+
+.icon-soc:before {
+    content: "\e90e";
+    color: #ff4f07;
+}
+
+.icon-standing:before {
+    content: "\e90f";
+    color: #ff4f07;
+}
+
+.icon-top_security:before {
+    content: "\e910";
+    color: #ff4f07;
+}
+
+.icon-airplane:before {
+    content: "\e911";
+    color: #ff4f07;
+}
+
+.icon-boat:before {
+    content: "\e912";
+    color: #ff4f07;
+}
+
+.icon-bus:before {
+    content: "\e913";
+    color: #ff4f07;
+}
+
+.icon-cafe:before {
+    content: "\e914";
+    color: #ff4f07;
+}
+
+.icon-cairo:before {
+    content: "\e915";
+    color: #ff4f07;
+}
+
+.icon-car:before {
+    content: "\e916";
+    color: #ff4f07;
+}

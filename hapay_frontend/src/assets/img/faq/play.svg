@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="play" transform="translate(0.947 -0.053)">
+    <circle id="Oval" cx="32" cy="32" r="32" transform="translate(-0.947 0.053)" fill="#f60"/>
+    <path id="play-2" data-name="play" d="M23,14.526v.4a1.087,1.087,0,0,1-.538.932L9.444,23.33c-.785.459-1.193.459-1.542.258l-.364-.2a1.087,1.087,0,0,1-.538-.9V6.969a1.087,1.087,0,0,1,.538-.932l.364-.2c.349-.2.756-.2,1.775.387l12.785,7.37a1.087,1.087,0,0,1,.538.932Z" transform="translate(16.053 17.338)" fill="#fff"/>
+  </g>
+</svg>

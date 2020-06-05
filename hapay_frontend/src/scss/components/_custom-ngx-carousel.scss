@@ -1,0 +1,231 @@
+.right-arrow {
+  position: absolute;
+  right: -55px;
+  top: 50%;
+  margin-top: -20px;
+  height: 40px;
+  width: 40px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  z-index: 1;
+  &:focus {
+    outline: none;
+  }
+
+  &:before {
+    transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #CCCED3;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+  &:after {
+    transition: border-color .3s ease-in-out;
+    content: "";
+    width: 8.5px;
+    z-index: 1;
+    border-bottom: 2px solid #9393C2;
+    opacity: 0.8;
+    transform: rotate(-45deg);
+    top: 50%;
+    border-right: 2px solid #9393C2;
+    position: absolute;
+    margin-top: -4px;
+    margin-left: -6px;
+    height: 8.5px;
+    left: 50%;
+  }
+  &:hover:before {
+    border-color: #ff4f07;
+    background-color: #ff4f07;
+  }
+  &:hover:after {
+    border-color: white;
+    opacity: 1;
+  }
+  @media screen and (max-width: 1280px) {
+    top: auto;
+    // bottom: -58px; //default style
+    right: 15px;
+    //custom styles start
+    width: 50px;
+    height: 50px;
+    bottom: -60px;
+    &:before {
+      position: unset;
+      width: 50px;
+      height: 50px;
+      margin: 0;
+    }
+    //custom styles end
+  }
+  @media screen and (max-width: 576px) {
+    right: 22px;
+  }
+  width: 50px;
+  height: 50px;
+}
+
+.left-arrow {
+  position: absolute;
+  left: -55px;
+  top: 50%;
+  margin-top: -20px;
+  height: 40px;
+  width: 40px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  z-index: 1;
+  &:focus {
+    outline: none;
+  }
+
+  &:before {
+    transition: border-color .3s ease-in-out, background-color .3s ease-in-out;
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #CCCED3;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+  &:after {
+    transition: border-color .3s ease-in-out;
+    content: "";
+    width: 8.5px;
+    z-index: 1;
+    border-bottom: 2px solid #9393C2;
+    opacity: 0.8;
+    transform: rotate(135deg);
+    top: 50%;
+    border-right: 2px solid #9393C2;
+    position: absolute;
+    margin-top: -4px;
+    margin-left: -2px;
+    height: 8.5px;
+    left: 50%;
+  }
+  &:hover:before {
+    border-color: #ff4f07;
+    background-color: #ff4f07;
+  }
+  &:hover:after {
+    border-color: white;
+    opacity: 1;
+  }
+  @media screen and (max-width: 1280px) {
+    top: auto;
+    // bottom: -58px; //default style
+    left: 15px;
+    //custom styles start
+    width: 50px;
+    height: 50px;
+    bottom: -60px;
+    &:before {
+      position: unset;
+      width: 50px;
+      height: 50px;
+      margin: 0;
+    }
+    //custom styles end
+  }
+  @media screen and (max-width: 576px) {
+    left: 22px;
+  }
+}
+
+.detail-slider {
+  .right-arrow {
+    right: 15px;
+
+    @media screen and (max-width: 576px) {
+      right: 0;
+    }
+  }
+
+  .left-arrow {
+    left: 15px;
+
+    @media screen and (max-width: 576px) {
+      left: 0;
+    }
+  }
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0px;
+}
+
+.track-left-arrow,
+.track-right-arrow {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.track-left-arrow {
+  background: url('/assets/img/shared/track-left-arrow.svg') no-repeat center center / contain;
+  left: 0;
+}
+
+.track-right-arrow {
+  background: url('/assets/img/shared/track-right-arrow.svg') no-repeat center center / contain;
+  right: 0;
+}
+
+.info-slider {
+  .slick-dots {
+    text-align: left;
+    bottom: -64px;
+
+    @media screen and (max-width: 992px) {
+      bottom: -50px;
+    }
+
+    @media screen and (max-width: 576px) {
+      text-align: center;
+    }
+
+    li {
+      margin: 0;
+
+      button {
+        width: 16px;
+        height: 16px;
+        border: 1px solid white;
+        border-radius: 50%;
+        background: transparent;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &.slick-active {
+        button {
+          background: white;
+        }
+      }
+    }
+  }
+}

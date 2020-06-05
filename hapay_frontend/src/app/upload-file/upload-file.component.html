@@ -1,0 +1,45 @@
+<div style="margin-right: 40%; margin-top: 15%; margin-bottom: 600px; width: 440px; height: 210px;" class="container">
+    <mat-form-field>
+        <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose expiration date" [formControl]="dateControl"
+            [min]="minDate" [max]="maxDate" [disabled]="false">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+
+        </mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker [showSpinners]="true" [showSeconds]="true" [stepHour]="1"
+            [stepMinute]="1" [stepSecond]="1" [touchUi]="false" [color]="accent"
+            [enableMeridian]="false" [disableMinute]="false" [hideTime]="false">
+        </ngx-mat-datetime-picker>
+    </mat-form-field>
+    <br>
+    <div style="margin-right: 50px; display: flex; align-items: center;" class="input-margin">
+        <div>
+            <input type="file"
+                #inputAvatar
+                aria-label="Upload photo"
+                hidden
+                id="upload-account-photo"
+                (change)="addFile($event)">
+            <button class="contact-us"
+                mat-accent
+                mat-raised-button
+                color="primary"
+                (click)="inputAvatar.click()">
+                Add file
+            </button>
+        </div>
+        <div *ngIf="file">
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip color="accent" selected>{{file?.name}} {{fileSize}} KB</mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+    <br>
+    <br>
+    <button class="contact-us"
+        mat-raised-button
+        color="accent"
+        (click)="sendData()">
+        Send data
+    </button>
+</div>
+

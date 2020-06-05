@@ -1,9 +1,14 @@
-from django.conf.urls import url
+from django.urls import path
 
 from .views import LoginAPIView, RegistrationAPIView, UserRetrieveUpdateAPIView
 
+from .apps import AuthenticationAppConfig
+
+
+app_name = AuthenticationAppConfig.name
+
 urlpatterns = [
-    url(r"^user/?$", UserRetrieveUpdateAPIView.as_view()),
-    url(r"^users/?$", RegistrationAPIView.as_view()),
-    url(r"^users/login/?$", LoginAPIView.as_view()),
+    path("user", UserRetrieveUpdateAPIView.as_view()),
+    path("users/register", RegistrationAPIView.as_view()),
+    path("users/login", LoginAPIView.as_view()),
 ]

@@ -14,7 +14,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ["email", "username", "password", "token"]
+        fields = ("email", "username", "password", "token")
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
@@ -50,7 +50,6 @@ class LoginSerializer(serializers.Serializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    """Handles serialization and deserialization of User objects."""
 
     password = serializers.CharField(max_length=128, min_length=8, write_only=True)
 

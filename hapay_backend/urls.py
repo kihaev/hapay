@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url
+from django.conf.urls import url, include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
+from hapay_backend.apps.authentication import views
+from django.contrib.auth import views as auth_views
 
 
 schema_view = get_schema_view(
@@ -29,20 +31,20 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("hapay_backend.apps.files.urls")),
-    path("", include("hapay_backend.apps.authentication.urls")),
-    path("", include("hapay_backend.apps.profiles.urls")),
-    url(
-        r"^swagger(?P<format>\.json|\.yaml)$",
-        schema_view.without_ui(cache_timeout=0),
-        name="schema-json",
+    path("login/", views.login, name="login"),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path("social-auth/", include("social_django.urls", namespace="social")),
+    path("", views.home, name="home"),
+    path("api/", include("hapay_backend.apps.files.urls", namespace="files")),
+    path(
+        "api/",
+        include("hapay_backend.apps.authentication.urls", namespace="authentication"),
     ),
+    path("api/", include("hapay_backend.apps.profiles.urls", namespace="profiles")),
     url(
-        r"^swagger/$",
+        "swagger/",
         schema_view.with_ui("swagger", cache_timeout=0),
         name="schema-swagger-ui",
     ),
-    url(
-        r"^redoc/$", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
-    ),
+    url("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
 ]

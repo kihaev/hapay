@@ -1,0 +1,82 @@
+<!-- <mat-toolbar>Menu</mat-toolbar>
+<mat-nav-list>
+  <button mat-menu-item
+          (click)="navigate('my-info')"
+          aria-label="My account">My Account</button>
+  <div class="divide-line"></div>
+  <button mat-menu-item
+          class="excursions">Excursions</button>
+  <button mat-menu-item
+          class="transfers">Transfers</button>
+  <button mat-menu-item
+          class="hotels">Hotels</button>
+  
+  <a mat-list-item
+     (click)="signOut()">Logout</a>
+</mat-nav-list> -->
+
+<div class="d-flex flex-column justify-content-between p-4 h-100">
+        <div class="top-navs">
+                <div class="d-flex justify-content-between pb-4">
+                        <div class="avatar d-flex align-items-center"
+                             [hidden]="isHandset | async">
+                                <div class="d-flex align-items-center">
+                                        <div class="avatar-empty rounded-circle"
+                                             *ngIf="!avatarUrl">{{ notExistAvatar }}
+                                        </div>
+                                        <div class="avatar-img rounded-circle"
+                                             *ngIf="avatarUrl">
+                                                <img [lazyLoad]="avatarUrl"
+                                                     alt="user" />
+                                        </div>
+                                        <span class="user-name">{{authService.user?.user?.username}}</span>
+                                </div>
+                        </div>
+                        <img src="/assets/img/header/cross.svg"
+                             alt=""
+                             (click)="onClose.emit()">
+                </div>
+                <div class="terminator"></div>
+
+                <ul class="list-group list-group-vertical-md">
+                        <li class="list-group-item border-0">
+                                <a routerLink="/my-info">My Account</a>
+                        </li>
+                        <!-- <li class="excursions list-group-item border-0">
+                                <a href="#">Excursions</a>
+                        </li>
+                        <li class="transfers list-group-item border-0">
+                                <a routerLink="/search-transfers">Transfers</a>
+                        </li> -->
+                        <!-- <li class="hotels list-group-item border-0">
+                                <a href="#">Hotels</a>
+                        </li> -->
+                        <li class="logout list-group-item border-0">
+                                <a href="#"
+                                   (click)="signOut()">Logout</a>
+                        </li>
+                </ul>
+        </div>
+        <div class="bottom-navs">
+                <!-- <button class="btn-lg w-100 mb-3 blue-text-button"
+                        mat-stroked-button
+                        [routerLink]="['basket']">
+                        <mat-icon>shopping_cart</mat-icon>
+                        Basket
+                        <span class="message-counter"
+                              *ngIf="inBasketCount">{{inBasketCount}}</span>
+                </button> -->
+                <button class="btn-lg w-100 mb-3 blue-text-button"
+                        mat-stroked-button
+                        [routerLink]="['cart']">
+                        <mat-icon>shopping_cart</mat-icon>
+                        Cart
+                        <span class="message-counter"
+                              *ngIf="inCartCount">{{inCartCount}}</span>
+                </button>
+                <button class="btn btn-warning contact-us w-100"
+                        [routerLink]="['contact-us']">
+                        Contact us
+                </button>
+        </div>
+</div>

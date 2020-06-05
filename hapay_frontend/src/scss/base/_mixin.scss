@@ -1,0 +1,102 @@
+//Type scale
+
+@mixin heading-1 {
+  font-weight: 500;
+  font-size: 64px;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+
+@mixin heading-2 {
+  font-weight: 500;
+  font-size: 48px;
+  letter-spacing: -1.2px;
+  line-height: 56px;
+}
+
+@mixin heading-3 {
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: -0.6px;
+  line-height: 40px;
+}
+
+@mixin heading-4 {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  line-height: 28px;
+}
+
+@mixin body {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+@mixin small-body {
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+//Flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+//Grid-layout
+@mixin grid-center {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid-between {
+  display: grid;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin grid-around {
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+//Stretch images
+@mixin stretch-contain {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+@mixin stretch-cover {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol viewBox="0 0 24 24" id="heart-grey" xmlns="http://www.w3.org/2000/svg">
+        <g fill-rule="evenodd">
+            <path fill-opacity=".16" d="M21.241 3.757A6 6 0 0012 4.684a6 6 0 10-9.242 7.558l9.241 9.243 9.243-9.243a6 6 0 000-8.485z"/>
+            <path d="M11.75 4.215a6.75 6.75 0 10-9.772 9.307l9.24 9.244a.75.75 0 001.06 0l9.244-9.243a6.75 6.75 0 10-9.773-9.308zm-8.712 8.247a5.25 5.25 0 118.086-6.613.75.75 0 001.25 0 5.246 5.246 0 018.087-.811 5.25 5.25 0 010 7.424l-8.713 8.713-8.71-8.713z"/>
+        </g>
+    </symbol>
+</svg>

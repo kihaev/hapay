@@ -1,0 +1,169 @@
+@import "./src/scss/base/variables.scss";
+
+button {
+    font-size: 16px;
+    line-height: 1.5;
+    border-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+    padding: 0 15px;
+    font-weight: normal;
+    font-family: $circular;
+    text-align: center;
+
+    //Size
+    &.small {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+    &.middle {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    &.large {
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+
+    &.big-red-button {
+        width: 100%;
+        border-radius: 5px;
+        background-color: rgb(97, 18, 104);
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        color: white;
+    }
+
+    //Colors
+    &.default {
+        color: $gray-80;
+        border-color: $gray-30;
+        background-color: $white;
+    }
+
+    &.important {
+        color: $gray-80;
+        border-color: $gray-90;
+        background-color: $white;
+    }
+
+    &.primary-action {
+        color: $white;
+        border-color: $aqua;
+        background-color: $aqua;
+    }
+
+    &.caution {
+        color: $white;
+        border-color: $accent-red;
+        background-color: $accent-red;
+    }
+
+    //Status
+    &:disabled {
+        color: $gray-50;
+        border-color: $gray-30;
+        background-color: $white;
+        cursor: default;
+    }
+
+    //Loaders
+    &.button-loader {
+        opacity: .5;
+    }
+
+    &.absolute-loader {
+        position: relative;
+        width: 100%;
+    }
+
+    &.relative-loader {
+        width: auto;
+    }
+
+    &.button-loader.absolute-loader {
+        .loader-selector {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            margin-top: -9px;
+        }
+    }
+
+    &.button-loader.relative-loader {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        .astroNet-button-content {
+            margin-left: 8px;
+        }
+
+        .loader-selector {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+//Content in button
+.astroNet-button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.astroNet-button-img {
+    margin-right: 8px;
+
+    img {
+        display: block;
+    }
+}
+
+//Loader styles
+.loader-selector {
+    display: none;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotate 0.75s 0s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-small {
+    margin-bottom: 15px;
+    width: fit-content;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    @media (min-width: 426px) {
+        width: fit-content;
+    }
+}

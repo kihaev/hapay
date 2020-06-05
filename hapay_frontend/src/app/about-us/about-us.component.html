@@ -1,0 +1,409 @@
+<!-- <div class="about-us-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-12">
+                <div class="header-content">
+                    <div class="block-title mb-1">About Us</div>
+                    <p class="header-subtitle">
+                        Probabo inquit modo ista sis aequitate quam ob rem aperiam eaque gaudere ut ita ruant itaque turbent ut ad id omnia referri
+                    </p>
+                    <div class="btn btn-warning btn-small btn-lg white-bg-hover">
+                        Learn More
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="seychelles-experience">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-12 d-flex flex-column justify-content-center mb-3 mb-md-0">
+                <div class="block-title">
+                    Live the Seychelles Experience . . . with Mason’s Travel
+                </div>
+                <div class="subtitle">
+                    Your dedicated and expert partner in Seychelles!
+                </div>
+                <div class="content">
+                    115 Breathtakingly beautiful islands, each with their own unique charm, rest in the warm Indian Ocean – far from the cyclone belt  and even further from any continent – Seychelles remains a paradise, an oasis, an exclusive destination where the rich and famous play undisturbed yet the discerning traveller finds the island getaway of their dreams no matter what their budget. <br>
+                    <br>
+                    From the luxury deserted island getaways to the allure of the rich cultural heritage inherent in the country’s inner islands, Seychelles has something to soothe the whims of every traveller’s fancy.
+                </div>
+                <a href="/contact-us" class="btn btn-warning btn-small white-bg-hover btn-lg">
+                    Contact Us
+                </a>
+            </div>
+            <div class="col-md-6 col-12 img-group-container">
+                <div class="img-wrapper play-button-container">
+                    <img src="/assets/img/about-us/flora.jpg" alt="" class="preview">
+                    <div class="play-circle">
+                        <img src="/assets/img/shared/play.svg" alt="" class="play-button">
+                    </div>
+                </div>
+                <div class="img-bottom-wrapper">
+                    <img src="/assets/img/about-us/ship.png" alt="" class="img-right-bottom">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="who-we-are">
+    <div class="container who-we-are-container">
+        <div class="border">
+            <div class="row">
+                <div class="col-md-6 col-12 text-container">
+                    <div class="content-wrap d-flex flex-column justify-content-center h-100">
+                        <div class="block-title">
+                            Who We Are
+                        </div>
+                        <div class="content">
+                            Established in 1972, Masons Travel is the leading Destination Management Company in Seychelles. We have extensive local knowledge, expertise and resources to guarantee a holiday with lasting memories for your clients. <br>
+                            <br>
+                            For over 40 years, we continue to deliver the highest standards of service to tourists on a daily basis. We ensure that your clients will be in the hands of the best people in the business – industry accredited, highly creative and truly dedicated.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 image-wrapper">
+                    <img src="/assets/img/about-us/pleasant-staff.jpg" alt="" class="w-100 h-100" class="pleasant-staff">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="what-do-we-do">
+    <div class="list-container">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="block-title">What We Do</div>
+                <div class="d-none d-lg-block">
+                    <button type="button"
+                            class="btn btn-light btn-lg red-bg-hover">
+                        View More
+                    </button>
+                </div>
+            </div>
+    
+            <ngx-slick-carousel class="carousel"
+                                #slickModal="slick-carousel"
+                                [config]="slideConfig">
+                <div ngxSlickItem
+                     *ngFor="let slide of slides"
+                     class="slide">
+                    <div class="place-teaser">
+                        <div class="img"
+                             [style.background-image]="'url(' + slide.img + ')'">
+                            <div class="title">
+                                <a href="#">
+                                    {{slide.text}}
+                                    <span>Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+            <div class="d-lg-none text-center">
+                <button type="button"
+                        class="btn btn-light btn-lg more-btn-mobile red-bg-hover">
+                    View More
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="for-you">
+    <div class="container">
+        <div class="block-title text-center">
+            What We Can Do For You
+        </div>
+        <div class="text-center subtitle">
+            We provide a full range of services to ensure an amazing destination experience tailor-made to your requests. Creating an alliance with Masons Travel allows you, as a Tour Operator or Travel Agent, to have one point of contact in the Seychelles who can cater for all your requirements.
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-bus"></i></div>
+                <div class="font-weight-bold text-center">Transfers & Handling</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-case"></i></div>
+                <div class="font-weight-bold text-center">Tailor-made services</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-note"></i></div>
+                <div class="font-weight-bold text-center">Groups & Incentives</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-cash"></i></div>
+                <div class="font-weight-bold text-center">Sales & Marketing</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-headphone"></i></div>
+                <div class="font-weight-bold text-center">24/7 Customer Service</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-airplane"></i></div>
+                <div class="font-weight-bold text-center">International outbound
+                    flights</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-soc"></i></div>
+                <div class="font-weight-bold text-center">Airline representation</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-standing"></i></div>
+                <div class="font-weight-bold text-center">Ground Handling</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-helicopter"></i></div>
+                <div class="font-weight-bold text-center">Helicopter flights</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-airplane"></i></div>
+                <div class="font-weight-bold text-center">Domestic flights</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-city"></i></div>
+                <div class="font-weight-bold text-center">Hotel bookings</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-car"></i></div>
+                <div class="font-weight-bold text-center">Car rentals</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-bus"></i></div>
+                <div class="font-weight-bold text-center">Private transfers</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-cairo"></i></div>
+                <div class="font-weight-bold text-center">Guided tours</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-top_security"></i></div>
+                <div class="font-weight-bold text-center">VIP services</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-cafe"></i></div>
+                <div class="font-weight-bold text-center">VIP Lounge</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-island"></i></div>
+                <div class="font-weight-bold text-center">Island hopping</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-dolly-fish"></i></div>
+                <div class="font-weight-bold text-center">Fishing</div>
+            </div>
+            <div class="col-md-2 col-6 service-group offset-md-1">
+                <div class="gray-circle mx-auto"><i class="icon-boat"></i></div>
+                <div class="font-weight-bold text-center">Sailing & Yachting</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-fins"></i></div>
+                <div class="font-weight-bold text-center">Scuba diving</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-golf"></i></div>
+                <div class="font-weight-bold text-center">Golfing</div>
+            </div>
+            <div class="col-md-2 col-6 service-group">
+                <div class="gray-circle mx-auto"><i class="icon-hiking"></i></div>
+                <div class="font-weight-bold text-center">Walks & Trails</div>
+            </div>
+            <div class="col-md-2 col-6 service-group offset-3 offset-md-0">
+                <div class="gray-circle mx-auto"><i class="icon-heart"></i></div>
+                <div class="font-weight-bold text-center">Weddings, Honeymoons
+                    and Marriage Proposals</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials">
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <div class="block-title">
+                Testimonials
+            </div>
+            <div class="d-none d-lg-block">
+                <button type="button"
+                        class="btn btn-light btn-lg red-bg-hover">
+                    View More
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="img-wrapper play-button-container">
+                    <img src="/assets/img/about-us/flora.jpg" class="w-100 preview" alt="">
+                    <div class="play-circle">
+                        <img src="/assets/img/shared/play.svg" alt="" class="play-button">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <div class="author d-flex">
+                        <img src="/assets/img/about-us/icon1.png" alt="" class="avatar">
+                        <div class="author-info d-flex flex-column justify-content-center">
+                            <div class="name">Andrew Marian</div>
+                            <div class="city">Bucharest, Romania</div>
+                        </div>
+                    </div>
+                    <div class="comment">"Quidam officiis similique sea ei, vel tollit indoctum efficiendi ei, at nihil tantas platonem eos. Mazim nemore singulis an ius, nullam ornatus nam ei. Idque maiestatis vis ut. An mel everti invenire intellegam, legendos consequuntur eu sit."</div>
+                    <div class="rate">
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-empty-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <div class="author d-flex">
+                        <img src="/assets/img/about-us/icon2.png" alt="" class="avatar">
+                        <div class="author-info d-flex flex-column justify-content-center">
+                            <div class="name">Andrew Marian</div>
+                            <div class="city">Bucharest, Romania</div>
+                        </div>
+                    </div>
+                    <div class="comment">"Quidam officiis similique sea ei, vel tollit indoctum efficiendi ei, at nihil tantas platonem eos. Mazim nemore singulis an ius, nullam ornatus nam ei. Idque maiestatis vis ut. An mel everti invenire intellegam, legendos consequuntur eu sit."</div>
+                    <div class="rate">
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-empty-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <div class="author d-flex">
+                        <img src="/assets/img/about-us/icon3.png" alt="" class="avatar">
+                        <div class="author-info d-flex flex-column justify-content-center">
+                            <div class="name">Andrew Marian</div>
+                            <div class="city">Bucharest, Romania</div>
+                        </div>
+                    </div>
+                    <div class="comment">"Quidam officiis similique sea ei, vel tollit indoctum efficiendi ei, at nihil tantas platonem eos. Mazim nemore singulis an ius, nullam ornatus nam ei. Idque maiestatis vis ut. An mel everti invenire intellegam, legendos consequuntur eu sit."</div>
+                    <div class="rate">
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-empty-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <div class="author d-flex">
+                        <img src="/assets/img/about-us/icon4.png" alt="" class="avatar">
+                        <div class="author-info d-flex flex-column justify-content-center">
+                            <div class="name">Andrew Marian</div>
+                            <div class="city">Bucharest, Romania</div>
+                        </div>
+                    </div>
+                    <div class="comment">"Quidam officiis similique sea ei, vel tollit indoctum efficiendi ei, at nihil tantas platonem eos. Mazim nemore singulis an ius, nullam ornatus nam ei. Idque maiestatis vis ut. An mel everti invenire intellegam, legendos consequuntur eu sit."</div>
+                    <div class="rate">
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-empty-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card">
+                    <div class="author d-flex">
+                        <img src="/assets/img/about-us/icon5.png" alt="" class="avatar">
+                        <div class="author-info d-flex flex-column justify-content-center">
+                            <div class="name">Andrew Marian</div>
+                            <div class="city">Bucharest, Romania</div>
+                        </div>
+                    </div>
+                    <div class="comment">"Quidam officiis similique sea ei, vel tollit indoctum efficiendi ei, at nihil tantas platonem eos. Mazim nemore singulis an ius, nullam ornatus nam ei. Idque maiestatis vis ut. An mel everti invenire intellegam, legendos consequuntur eu sit."</div>
+                    <div class="rate">
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-full-star"></i>
+                        <i class="icon-empty-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-lg-none text-center">
+                <button type="button"
+                        class="btn btn-light btn-lg more-btn-mobile w-100 red-bg-hover">
+                    View More
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="best-choice">
+    <div class="container">
+        <div class="row header-part">
+            <div class="col-lg-7 col-12"><div class="img-container"><img class="w-100" src="/assets/img/about-us/guide.jpg" alt=""></div></div>
+            <div class="col-lg-5 col-12">
+                <div class="text-section mt-4 mt-lg-0 h-100">
+                    <div class="block-title">
+                        Best Choice Among Tours
+                    </div>
+                    <div class="subtitle">
+                        Welcome to Seychelles, the prestigious island getaway and exclusive destination where the rich and famous play undisturbed, yet the discerning traveller finds the island getaway of their dreams - no matter what their budget.
+                    </div>
+                    <a href="/contact-us" class="btn btn-warning btn-small btn-lg white-bg-hover">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-8 col-12 order-1"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea1.jpg" alt=""></div></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 order-2"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea2.jpg" alt=""></div></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 order-3"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea3.jpg" alt=""></div></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 order-4"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea4.jpg" alt=""></div></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 order-5"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea5.jpg" alt=""></div></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 order-6"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea6.jpg" alt=""></div></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 order-7"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea7.jpg" alt=""></div></div>
+            <div class="col-lg-4 col-md-6 col-sm-8 col-12 order-8 order-sm-9 order-md-8"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea8.jpg" alt=""></div></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 order-9 order-sm-10 order-md-9"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea9.jpg" alt=""></div></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 order-10 order-sm-8 order-md-10"><div class="img-container"><img class="w-100" src="/assets/img/about-us/sea10.jpg" alt=""></div></div>
+        </div>
+    </div>
+</div>
+
+<div class="stats text-center">
+    <div class="container">
+        <div class="block-title">
+            Booking is the best<br> travel service
+        </div>
+        <div class="text">
+            <p>
+                Probabo inquit modo ista sis aequitate quam ob rem aperiam eaque<br>
+                gaudere ut ita ruant itaque turbent ut ad id omnia referri oporteat ipsum<br>
+                autem vel illum qui
+            </p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="stat-item mr-3 mr-md-5">
+                <span>360+</span>
+                Excursions
+            </div>
+            <div class="stat-item">
+                <span>260+</span>
+                Transfers
+            </div>
+        </div>
+    </div>
+</div> -->
