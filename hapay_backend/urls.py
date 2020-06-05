@@ -33,7 +33,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("login/", views.login, name="login"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
-    path('social-auth/', include('social_django.urls', namespace="social")),
+    path("social-auth/", include("social_django.urls", namespace="social")),
     path("", views.home, name="home"),
     path("api/", include("hapay_backend.apps.files.urls", namespace="files")),
     path(

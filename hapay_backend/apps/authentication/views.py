@@ -10,12 +10,16 @@ from .serializers import LoginSerializer, RegistrationSerializer, UserSerializer
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
+
 def login(request):
-    return render(request, 'login.html')
+    return render(request, "login.html")
+
+
 @login_required
 def home(request):
-    return render(request, 'home.html')
-    
+    return render(request, "home.html")
+
+
 class RegistrationAPIView(APIView):
     permission_classes = (AllowAny,)
     renderer_classes = (UserJSONRenderer,)
