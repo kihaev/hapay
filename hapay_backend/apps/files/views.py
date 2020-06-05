@@ -1,4 +1,4 @@
-from rest_framework import generics, mixins, status, viewsets
+from rest_framework import generics, mixins, status, viewsets, parsers
 from rest_framework.exceptions import NotFound
 from rest_framework.permissions import (
     AllowAny,

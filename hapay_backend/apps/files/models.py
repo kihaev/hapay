@@ -8,6 +8,7 @@ class File(TimestampedModel):
     link = models.URLField()
     description = models.TextField()
     fileobject = models.FileField()
+    expire_at = models.DateTimeField()
     owner = models.ForeignKey(
         "profiles.Profile", on_delete=models.CASCADE, related_name="files"
     )
